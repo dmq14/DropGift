@@ -6,33 +6,83 @@
     <title>Gift Catching Game</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   </head>
-  <body>
+  <body class="bg-secondary">
     <div class="container mb-5">
       <img src="https://khoavang.vn/resources/cache/750x354x3/banner/uu-dai-laptop-gaming-1-1696922714.png" class="d-block w-100" alt="...">
     </div>
-    <div class="container text-center">
-      <div class="row">
-        <div class="col" style="background-color: aqua;">
-          <button onclick="start()" id="myButton">Start</button>
-        </div>
-        <div class="col-6">
-          <div class="game">
-            <div class="counter" id="counter">Thời gian</div>
+    <div class= "container mb-5">
+      <div class= "row">
+         <div class ="col-md-3 bg-primary">
+          <div class="button d-flex justify-content-center">
+            <a onclick="start()" id="myButton" >Start</a>
+          </div>
+          <div>
+            <div class="counter " id="counter"><span id="timer">0:00</span></div>
             <div class="score">00</div>
           </div>
-        </div>
-        <div class="col" style="background-color: aqua;">
-          3 of 3
-        </div>
+         </div>
+         <div class ="col-md-6 ">
+          <div class="container text-center">
+            <div class="row">
+              <!-- <div class="col" style="background-color: aqua;">
+              </div> -->
+                <!-- <button class="custom-btn btn-11" onclick="start()" id="myButton">Start</button> -->
+                <div class="game">
+
+                </div>
+              <!-- <div class="col" style="background-color: aqua;">
+                3 of 3
+              </div> -->
+            </div>
+          </div>
+         </div>
+         <div class ="col-md-3 bg-success">
+          Thể Lệ Trò Chơi
+         </div>
       </div>
-    </div>
+   </div>
+<!-- The Result Modal -->
+<div class="modal" id="resultModal">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+              <h4 class="modal-title" id="modalTitle">Kết quả</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <!-- Modal body -->
+          <div class="modal-body" id="modalContent">
+              <!-- Content will be filled dynamically -->
+          </div>
+          <div class="container col-10">
+          <h3>Vui lòng nhập thông tin của bạn để kích hoạt mã giảm giá</h3>
+          <form>
+            <div class="form-group">
+                <label for="name">Họ và tên:</label>
+                <input type="text" class="form-control" id="name">
+            </div>
+            <div class="form-group">
+                <label for="phone">Số điện thoại:</label>
+                <input type="text" class="form-control" id="phone">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+  
+ 
+    
     <div class="container">
       <p style="text-align: center;">
         a </br>
@@ -50,5 +100,12 @@
 
     <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Add Bootstrap CSS -->
+
+<!-- Add jQuery -->
+
+<!-- Add Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
   </body>
 </html>
