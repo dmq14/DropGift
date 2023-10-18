@@ -20,7 +20,7 @@
     <div class="container text-center">
       <div class="row">
         <div class="col" style="background-color: aqua;">
-          <button id="startButton">Start Animation</button>
+          <button onclick="start()" id="myButton">Start</button>
         </div>
         <div class="col-6">
           <div class="game">
@@ -52,37 +52,3 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </body>
 </html>
-<script>
-  var score = 0;
-
-  function startGame() {
-    var runGame = setInterval(function () {
-      for (var i = 0; i < 10; i++) {
-        dropBox();
-      }
-    }, 5000);
-    countdown(runGame);
-  }
-
-  function dropBox() {
-    // implementation of the dropBox function
-  }
-
-  function countdown(runGame) {
-    var seconds = 60;
-    function tick() {
-      var counter = document.getElementById("counter");
-      seconds--;
-      counter.innerHTML = (seconds < 10 ? "0" : "") + String(seconds) + "S";
-      if (seconds > 0) {
-        setTimeout(tick, 1000);
-      } else {
-        alert("Game over");
-        clearInterval(runGame);
-      }
-    }
-    tick();
-  }
-
-  // rest of your JavaScript code
-</script>

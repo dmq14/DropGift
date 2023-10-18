@@ -1,6 +1,6 @@
 var score = 0;
 var color = "blue";
-
+var set = 3;
 function random(min, max) {
     return Math.round(Math.random() * (max - min) + min);
 }
@@ -32,7 +32,7 @@ const Gift = [
     }
 ];
 
-const Danger = [
+const Danger= [
     {
         id: 1,
         img: 'http://icons.iconarchive.com/icons/hopstarter/halloween-avatars/128/Frankenstein-icon.png',
@@ -42,7 +42,18 @@ const Danger = [
         img: 'http://icons.iconarchive.com/icons/hopstarter/halloween-avatars/128/Scream-icon.png'
     }
 ];
+function refresh(){
+    stopDropBox = true;
+    stopTime = true;
+}
+function stop() {
+    score = 0;
+    $(".score").html(score);
+    var counter = document.getElementById("counter");
+    counter.innerHTML = "60S";
+    refresh();
 
+}
 function setBG() {
     if (Math.round(Math.random())) {
         return Danger[0].img;
@@ -50,8 +61,20 @@ function setBG() {
         return Danger[1].img;
     }
 }
+function start() {
+    var button = document.getElementById('myButton');
+    if (button.innerHTML === 'Start') {
+        button.innerHTML = 'Dừng';
+    } else {
+        button.innerHTML = 'Start';
+        stop();
 
+    }
+}
+var stopDropBox = false;
 function dropBox() {
+    if (!stopDropBox) {
+        
     var length = random(100, ($(".game").width() - 100));
     var velocity = random(850, 10000);
     var size = random(50, 150);
@@ -69,9 +92,11 @@ function dropBox() {
     } else {
         thisBox.css({ "background": "url('" + Danger[randomDangerIndex].img + "')", "background-size": "contain" });
     }
+    countdown();
 
     //insert gift element
-    $(".game").append(thisBox);
+     $(".game").append(thisBox);
+
 
     //random start for animation
     setTimeout(function () {
@@ -83,11 +108,10 @@ function dropBox() {
         function (event) {
             $(this).remove();
         });
+    }
+
 }
 
-for (var i = 0; i < 10; i++) {
-    dropBox();
-}
 
 $(document).on('click', '.box', function () {
     if ($(this).data("test")) {
@@ -100,33 +124,40 @@ $(document).on('click', '.box', function () {
     $(this).remove();
 });
 
-var runGame;
-
-function startGame() {
-    runGame = setInterval(function () {
-        for (var i = 0; i < 10; i++) {
+function gameStart(){
+    stopDropBox = false;
+    stopTime = false;
+    dropBox();
+    var runGame = setInterval(function () {
+        for (i = 0; i < 10; i++) {
             dropBox();
-        }
-    }, 5000);
-    countdown(runGame);
-}
+       }
+    }, 2000);
 
-function countdown(runGame) {
+}
+var stopTime= false;
+function countdown() {
     var seconds = 60;
 
     function tick() {
-        var counter = document.getElementById("counter");
-        seconds--;
-        counter.innerHTML = (seconds < 10 ? "0" : "") + String(seconds) + "S";
-        if (seconds > 0) {
-            setTimeout(tick, 1000);
-            draw();
-            update();
-        } else {
-            alert("Game over");
-            clearInterval(runGame);
+        if (!stopTime) {
+    
+            var counter = document.getElementById("counter");
+            seconds--;
+            counter.innerHTML = (seconds < 10 ? "0" : "") + String(seconds) + "S";
+            if (seconds > 0) {
+                setTimeout(tick, 1000);
+            } else {
+                clearInterval(runGame);
+            }
         }
     }
 
     tick();
 }
+
+
+$("#myButton").on("click", function() {
+
+    gameStart();
+});
