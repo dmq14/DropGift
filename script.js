@@ -37,6 +37,8 @@ let seconds = 1;
 let minutes = 1;
 let secondsDone;
 let minutesDone;
+let runGame;
+
 function startTimer() {
     
     if (!timer) {
@@ -82,7 +84,7 @@ function displayResultModal() {
 
 function refresh(){
     stopTimer();
-    minutes=3;
+    minutes=1;
     seconds=1;
     updateTimer();
     score = 0;
@@ -112,18 +114,28 @@ function start() {
         button.innerHTML = 'Stop';
         stopDropBox = false;
         button.classList.add('red-button');
+        score = 0;
+    $(".score").html(score);
+    var counter = document.getElementById("counter");
         startTimer();
+        runGame = setInterval(function () {
+            for (i = 0; i < 2; i++) {
+                dropBox();
+            }
+        }, 1000);
     } else {
         button.innerHTML = 'Start';
         stopDropBox = true;
         button.classList.remove('red-button');
         refresh();
+        clearInterval(runGame); // Dừng vòng lặp khi bấm dừng
     }
 }
+
 function dropBox() {
     if (!stopDropBox) {
-    var length = random(7, ($(".game").width() - 100));
-    var velocity = random(850, 9000);
+    var length = random(8, ($(".game").width() - 100));
+    var velocity = random(850, 8000);
     var size = random(40, 100);
     var thisBox = $("<div/>", {
         class: "box",
@@ -173,11 +185,7 @@ $(document).on('click', '.box', function () {
 function gameStart(){
 
     dropBox();
-    var runGame = setInterval(function () {
-        for (i = 0; i < 2; i++) {
-            dropBox();
-       }
-    }, 1000);
+
 
 }
 

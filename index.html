@@ -10,15 +10,38 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   </head>
   <body style="background-color: rgb(232, 232, 93);">
+    <div class="container  p-3">
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="background-color: rgb(160, 24, 24) !important; border-radius: 11px;">
+      <!-- Toggler/collapsibe Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+         <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+         <ul class="navbar-nav" style="width: 100%;">
+            <li class="nav-item d-flex justify-content-center">
+               <a class="nav-link menu-nav " href="#minigame" >Mini Game Drop Gift</a>
+            </li>
+            <li class="nav-item d-flex justify-content-center">
+               <a class="nav-link menu-nav " href="#thele" >Thể lệ</a>
+            </li>
+            <li class="nav-item d-flex justify-content-center">
+               <a class="nav-link menu-nav" href="#dstrungthuong" >Danh sách trúng thưởng</a>
+            </li>
+         </ul>
+      </div>
+    </div>
     <div class="container mb-5">
       <img src="https://khostock.net/wp-content/uploads/2023/09/TET74-Converted.jpg"  class="d-block w-100" alt="...">
     </div>
-<section>
-    <div class= "container mb-5 ">
+    <div class= "container mb-5 border-top border-dark " id="minigame">
+      <h1 class="d-flex justify-content-center mb-3 mt-5 namegame">DROP GIFT</h1>
       <div class= "row">
          <div class ="col-md-3 ">   
           <div class="counter " id="counter"><span class="time" id="timer">0:00</span></div> 
-          <div class=" d-flex justify-content-center" style="border-top: 2px solid;">
+          <div class=" d-flex justify-content-center" style="border-top: 1px solid;">
             <div class=" button">
               <a onclick="start()" id="myButton" >Start</a>
             </div>
@@ -80,9 +103,9 @@
   
  
     
-    <div class="container mb-5" >
-      <div class="row d-flex justify-content-center" >
-        <div class="col-md-4 thele "style="height:640px; background-color:rgba(255, 255, 255, 0.7)">
+    <div class="container mb-5 border-top border-dark" >
+      <div class="row d-flex justify-content-center mt-5" >
+        <div class="col-md-4 thele "style="height:640px; background-color:rgba(255, 255, 255, 0.7)" id="thele">
           <h2 class="p-2" style="color: #FF914D;">Thể lệ chương trình</h2>
           <div class="scroll">
 
@@ -129,7 +152,7 @@
         </div>
 
         </div>
-        <div class=" col-md-4 trungthuong "style="height:640px; background-color:rgba(255, 255, 255, 0.7)" >
+        <div class=" col-md-4 trungthuong "style="height:640px; background-color:rgba(255, 255, 255, 0.7)" id="dstrungthuong">
           <img class="dstt"  src="https://cdn.discordapp.com/attachments/991289858150649947/1164836871881359380/bannerTrungthuong.png?ex=6544a9df&is=653234df&hm=9d86f720b5ca2110d0372fb3b06a25526ad98345a1f64496f0578988641f9574&" alt="">
           <div class="bgdstt" >
             <div class="scroll">
@@ -214,19 +237,17 @@
         </div>
       </div>
     </div>
-    <div class="container bg-primary mb-5" style="height: 500px; margin-top: 3em;">
+    <div class="container mb-5" style="height: 500px; margin-top: 3em; background-color:rgba(255, 255, 255, 0.7)">
       BÌNH LUẬN
     </div>
 
     <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
-    <!-- Add Bootstrap CSS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<!-- Add jQuery -->
-
-<!-- Add Bootstrap JS -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
   </body>
 </html>

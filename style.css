@@ -1,5 +1,11 @@
-
-
+*{
+  
+  scroll-behavior:smooth;
+}
+.menu-nav{
+  color: rgb(255, 255, 255) !important;
+  font-weight: bold;
+}
 .game{
     background: #efefef;
     width:360px;
@@ -169,6 +175,11 @@
     -moz-border-radius: 5px;
     border-radius: 5px;
   }
+  .namegame{
+    font-family: auto;
+    font-weight: bold;
+    font-size: 55px;
+  }
   .thele{
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -210,6 +221,7 @@
   .scroll::-webkit-scrollbar-thumb:hover {
     background: #a04d12;
   }
+  
   @media screen and (max-width: 769px) {
     .thele{
       border-bottom-right-radius: 20px;
@@ -223,6 +235,7 @@
       height: 613px;
     }
   }
+
   @media only screen and (max-width: 600px) {
     .score{
       font-size: 100px;
