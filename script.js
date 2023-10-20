@@ -8,33 +8,33 @@ function random(min, max) {
 const Gift = [
     {
         id: 1,
-        img: 'https://cdn.discordapp.com/attachments/991289858150649947/1164136005268422656/1.png?ex=65421d24&is=652fa824&hm=845cace8de306d40e378794d9a3a675c89c75d5e4e89fbd56e83e3c64b11fe74&',
+        img: 'https://media.discordapp.net/attachments/991289858150649947/1164769217875279912/banhchung.png?ex=65446add&is=6531f5dd&hm=679127460ed15692d1fb44bf2b330edd273a888e8ceae7b943a0880edd0d72b8&=&width=625&height=625',
     },
     {
         id: 2,
-        img: 'https://cdn.discordapp.com/attachments/991289858150649947/1164136005608149043/2.png?ex=65421d24&is=652fa824&hm=88e0fbc85f025cf1eb573bf02fb924c4863c40f77b37312b93827e89170f5a7d&'
+        img: 'https://media.discordapp.net/attachments/991289858150649947/1164769218290524270/baolixi.png?ex=65446ade&is=6531f5de&hm=d66efd3691d270d8647daa0acc86b2b02da0b4894a566a4768c4a6c36706d941&=&width=625&height=625'
     },
     {
         id: 3,
-        img: 'https://cdn.discordapp.com/attachments/991289858150649947/1164136006384107531/3.png?ex=65421d24&is=652fa824&hm=51687e0f88c306da08970a419920b9800841f617932215ce09cc52bd19f2058b&'
+        img: 'https://media.discordapp.net/attachments/991289858150649947/1164769218571554918/hopqua.png?ex=65446ade&is=6531f5de&hm=f71befd569c7b6284df2d25692bec5caad78c911ff936d2f28d344fd04b015ae&=&width=625&height=625'
     }
 ];
 
 const Danger= [
     {
         id: 1,
-        img: 'https://cdn.discordapp.com/attachments/991289858150649947/1164136007508168755/5.png?ex=65421d24&is=652fa824&hm=e361bc1e4ea947890ef223cc820e5f4e7d114b8162e90baa92a0b9ddf17d8ee0&',
+        img: 'https://cdn.discordapp.com/attachments/991289858150649947/1164769218911273100/icongian.png?ex=65446ade&is=6531f5de&hm=2a23c4c1d38bba857a600541e897c0047045a072d092d6eead3b911f2996fb51&',
     },
     {
         id: 2,
-        img: 'https://cdn.discordapp.com/attachments/991289858150649947/1164136007130689556/4.png?ex=65421d24&is=652fa824&hm=2cb1ddeae1209cc31b45339eaf0a103f9fcc7425c4b3a7489901afb4d08a4b9e&'
+        img: 'https://cdn.discordapp.com/attachments/991289858150649947/1164769219196493844/iconkhoc.png?ex=65446ade&is=6531f5de&hm=4357b81176d8f2bbb4c8f9a753705b8aba84d98bf2c0ee9b55155c036b299474&'
     }
 ];
 var stopDropBox = false;
 let timer;
 
-let seconds = 6;
-let minutes = 0;
+let seconds = 1;
+let minutes = 1;
 let secondsDone;
 let minutesDone;
 function startTimer() {
@@ -105,23 +105,26 @@ function setBG() {
         return Danger[1].img;
     }
 }
+
 function start() {
     var button = document.getElementById('myButton');
     if (button.innerHTML === 'Start') {
-        button.innerHTML = 'Dừng';
+        button.innerHTML = 'Stop';
         stopDropBox = false;
+        button.classList.add('red-button');
         startTimer();
     } else {
         button.innerHTML = 'Start';
         stopDropBox = true;
+        button.classList.remove('red-button');
         refresh();
     }
 }
 function dropBox() {
     if (!stopDropBox) {
-    var length = random(10, ($(".game").width() - 100));
-    var velocity = random(850, 10050);
-    var size = random(50, 120);
+    var length = random(7, ($(".game").width() - 100));
+    var velocity = random(850, 9000);
+    var size = random(40, 100);
     var thisBox = $("<div/>", {
         class: "box",
         style: "width:" + size + "px; height:" + size + "px; left:" + length + "px; transition: transform " + velocity + "ms linear;"
@@ -171,10 +174,10 @@ function gameStart(){
 
     dropBox();
     var runGame = setInterval(function () {
-        for (i = 0; i < 5; i++) {
+        for (i = 0; i < 2; i++) {
             dropBox();
        }
-    }, 2000);
+    }, 1000);
 
 }
 
