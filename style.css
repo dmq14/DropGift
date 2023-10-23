@@ -1,10 +1,13 @@
 *{
-  
+  text-align: justify;
   scroll-behavior:smooth;
 }
 .menu-nav{
   color: rgb(255, 255, 255) !important;
   font-weight: bold;
+}
+.shadow-box{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .game{
     background: #efefef;
@@ -16,8 +19,10 @@
 
   }
 .bg{
-  /* background-image: url("https://cdn.discordapp.com/attachments/991289858150649947/1164472605080825896/12.png?ex=6543569f&is=6530e19f&hm=3e51dcdc3a5883a51a8f06ffa37825a84787a9f582b769c59ed4bae4053880b3&"); */
-  background-image: url("https://cdn.discordapp.com/attachments/991289858150649947/1164481418773143552/14.png?ex=65435ed5&is=6530e9d5&hm=8c390bd57c65577eadb1cc20a0b95f1b51d8751217715a2868eb96749c693b6e&");
+  background-image: url("https://cdn.discordapp.com/attachments/991289858150649947/1165843210346704897/10.png?ex=65485319&is=6535de19&hm=6b589c1112ea7cc73f23c8fc940de5a5bc977bde2ddf9a8049b9c0cab154f10c&");
+  background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
   .bggame{
   /* background-image: url("https://cdn.discordapp.com/attachments/991289858150649947/1164409654990876672/8.png?ex=65431bff&is=6530a6ff&hm=4919f4bb0a4d7b165433b5b1361fbb2bee1dd864dfa80dc84ae5409f162289e1&"); */
@@ -69,7 +74,7 @@
   }
 .rules{
   width: 100%;
-    height: auto;
+  height: auto;
 }
   .button{
     position:relative;
@@ -192,7 +197,7 @@
   .dstt{
     width: 100%; 
     height: auto; 
-    margin-top: -13px;
+    margin-top: -14px;
     border-top-right-radius: 33px;
   }
   .bgdstt{
@@ -207,6 +212,7 @@
   }
   .scroll::-webkit-scrollbar {
     width: 6px;
+    height: 6px;
   }
   
   .scroll::-webkit-scrollbar-track {
@@ -235,7 +241,15 @@
       height: 613px;
     }
   }
-
+  @media (min-width: 770px) and (max-width: 982px) {
+    .startMB{
+      flex-direction: column;
+    }
+    .button a{
+      font-size: 19px;
+    }
+  }
+  
   @media only screen and (max-width: 600px) {
     .score{
       font-size: 100px;

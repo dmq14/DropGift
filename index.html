@@ -9,7 +9,7 @@
    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   </head>
-  <body style="background-color: rgb(232, 232, 93);">
+  <body style="background-color: rgb(232, 232, 93);" class="bg">
     <div class="container  p-3">
 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="background-color: rgb(160, 24, 24) !important; border-radius: 11px;">
@@ -25,7 +25,7 @@
                <a class="nav-link menu-nav " href="#minigame" >Mini Game Drop Gift</a>
             </li>
             <li class="nav-item d-flex justify-content-center">
-               <a class="nav-link menu-nav " href="#thele" >Thể lệ</a>
+               <a class="nav-link menu-nav " href="#thele" >Thể lệ chương trình</a>
             </li>
             <li class="nav-item d-flex justify-content-center">
                <a class="nav-link menu-nav" href="#dstrungthuong" >Danh sách trúng thưởng</a>
@@ -41,7 +41,7 @@
       <div class= "row">
          <div class ="col-md-3 ">   
           <div class="counter " id="counter"><span class="time" id="timer">0:00</span></div> 
-          <div class=" d-flex justify-content-center" style="border-top: 1px solid;">
+          <div class=" d-flex justify-content-center startMB" style="border-top: 1px solid;  ">
             <div class=" button">
               <a onclick="start()" id="myButton" >Start</a>
             </div>
@@ -51,25 +51,30 @@
          </div>
          <div class ="col-md-6 ">
           <div class="d-flex justify-content-center ">
-            <div class="game "> </div>
+            <div class="game shadow-box" > </div>
           </div>
          </div>
          <div class ="col-md-3 ">
-          <H2 class="d-flex justify-content-center mt-2">Hướng dẫn chơi </H2>
-
+          <!-- <H2 class="d-flex justify-content-center mt-2">Hướng dẫn chơi </H2> -->
+          <div>
+            <img class="rules" src="https://cdn.discordapp.com/attachments/991289858150649947/1165847357628366878/11.png?ex=654856f6&is=6535e1f6&hm=c83d646d463d011f46df285bf39bffdba958eaff96cb6242174c784573439a12&" alt="">
+          </div>
+          <div style="background-color: rgb(255, 255, 255);">
           <div >
             <img class="rules" src="https://cdn.discordapp.com/attachments/991289858150649947/1164769220144398416/nen.png?ex=65446ade&is=6531f5de&hm=4d867fcbdbfa09ed3007c2f5d006a6106437a59695bb0ef164d11fcb8a915276&" alt="+1" srcset="">
           </div>
             <img class="rules" src="https://cdn.discordapp.com/attachments/991289858150649947/1164769219511078992/khongnen.png?ex=65446ade&is=6531f5de&hm=bf4ebb9a1201c20b484e6127d399728524415523f11a59a176d8a4b5c771e145&" alt="-1" srcset="">
          </div>
+        </div>
+
       </div>
    </div>
 <!-- The Result Modal -->
 <div class="modal" id="resultModal">
   <div class="modal-dialog">
-      <div class="modal-content">
-          <!-- Modal Header -->
-          <div class="modal-header">
+    <div class="modal-content" style="background-image: url('https://cdn.discordapp.com/attachments/991289858150649947/1165876826757935225/13.png?ex=65487268&is=6535fd68&hm=032a6720e969492a4f3e0f48d2ce0e877d3be3c0d65417bc9f7223b337234d6c&'); background-color: antiquewhite;">
+      <!-- Modal Header -->
+      <div class="modal-header">
               <h4 class="modal-title" id="modalTitle">Kết quả</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
@@ -77,28 +82,54 @@
           <div class="modal-body" id="modalContent">
               <!-- Content will be filled dynamically -->
           </div>
-          <div class="container col-10">
+          <div class="container col-10 mb-3">
           <h3>Vui lòng nhập thông tin của bạn để kích hoạt mã giảm giá</h3>
-          <form>
+          <form id = "dataForm">
             <div class="form-group">
                 <label for="name">Họ và tên:</label>
-                <input type="text" class="form-control" id="name">
+                <input style="background-color: rgb(255, 255, 255,0.5);" type="text" class="form-control" id="name" required >
             </div>
             <div class="form-group">
                 <label for="phone">Số điện thoại:</label>
-                <input type="text" class="form-control" id="phone">
+                <input style="background-color: rgb(255, 255, 255,0.5);" type="text" class="form-control" id="phone"  pattern="[0-9]{10}" title="Hãy nhập số điện thoại hợp lệ (e.g., 1234567890)" required >
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+            <div class="d-flex justify-content-sm-center">
+              <button type="submit" class="btn btn-success">Nhận mã</button>
+            </div>
+
+          </form>
+      </div>
       </div>
 
-          <!-- Modal footer -->
-          <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-      </div>
   </div>
 </div>
+
+<div class="modal" id="modalSuccess">
+  <div class="modal-dialog">
+    <!-- <img class="dstt"  src="https://cdn.discordapp.com/attachments/991289858150649947/1165911785589714955/14.png?ex=654892f7&is=65361df7&hm=e97ed9f67eef01a7df8c412c900f562641981cfe92cf272ae45e2cd401f76e89&" alt=""> -->
+      <div class="modal-content" style="background-image:url(https://cdn.discordapp.com/attachments/991289858150649947/1165913378963857428/14.png?ex=65489473&is=65361f73&hm=bf3ba598c5ec0ecf63ce89a3ab404668b3d2cbdef37c69064cdc1bdac3083e36&); background-color: cornsilk;">
+          <!-- Modal Header -->
+          <div class="modal-header">
+              <h4 class="modal-title" id="modalTitle">Chúc mừng bạn!</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <!-- Modal body -->
+          <div class="modal-body" id="modalContent">
+              <!-- Content will be filled dynamically -->
+          </div>
+          <div class="container ">
+            <!-- <h4 class="modal-title text-center " style="font-weight: bolder;">Cảm ơn bạn đã tham gia chương trình</h4> -->
+            <h4 class="modal-title text-center" id="success"></h4>
+            <h4 class="modal-title text-center" id="coupon" style="font-weight: bold; color: brown;"></h4>
+            <div class="d-flex justify-content-center">
+              <button id="copyButton" onclick="copyCouponCode()" class="button btn btn-outline-success ">Sao Chép</button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
   
  
@@ -152,9 +183,9 @@
         </div>
 
         </div>
-        <div class=" col-md-4 trungthuong "style="height:640px; background-color:rgba(255, 255, 255, 0.7)" id="dstrungthuong">
-          <img class="dstt"  src="https://cdn.discordapp.com/attachments/991289858150649947/1164836871881359380/bannerTrungthuong.png?ex=6544a9df&is=653234df&hm=9d86f720b5ca2110d0372fb3b06a25526ad98345a1f64496f0578988641f9574&" alt="">
-          <div class="bgdstt" >
+        <div class=" col-md-4 trungthuong "style="height:640px; background-color:rgba(255, 255, 255, 0.7)" >
+          <img id="dstrungthuong" class="dstt"  src="https://cdn.discordapp.com/attachments/991289858150649947/1164836871881359380/bannerTrungthuong.png?ex=6544a9df&is=653234df&hm=9d86f720b5ca2110d0372fb3b06a25526ad98345a1f64496f0578988641f9574&" alt="">
+          <div class="bgdstt"  >
             <div class="scroll">
             <table class="table  table-striped" style="font-size: 10px; ">
               <thead>

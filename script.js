@@ -33,10 +33,9 @@ const Danger= [
 var stopDropBox = false;
 let timer;
 
-let seconds = 1;
-let minutes = 1;
-let secondsDone;
-let minutesDone;
+let seconds = 2;
+let minutes = 0;
+let scoreDone;
 let runGame;
 
 function startTimer() {
@@ -76,7 +75,9 @@ function displayResultModal() {
     let modalTitle = document.getElementById('modalTitle');
     let modalContent = document.getElementById('modalContent');
     modalTitle.innerHTML = 'Kết quả';
+    scoreDone = score;
     modalContent.innerHTML = ` Điểm của bạn: ${score}`;
+    console.log(scoreDone);
     refresh();
 
     $('#resultModal').modal('show');
@@ -169,8 +170,41 @@ function dropBox() {
     }
 
 }
+function checkTime(scoreDone) {
+    var CodeWin = {
+        code: '',
+        description: ''
+    };
+    console.log(scoreDone);
+    if (scoreDone >= 40) {
+        CodeWin.code = 'SALE-KL12';
+        CodeWin.description = 'Mã giảm giá 300K';
+    } else if (scoreDone < 40 && scoreDone >= 30) {
+        CodeWin.code = 'SALE-GH78';
+        CodeWin.description = 'Mã giảm giá 200K';
+    } else {
+        CodeWin.code = 'SALE-CD34';
+        CodeWin.description = 'Mã giảm giá 100K';
+    }
+    return CodeWin;
+}
 
+function copyCouponCode() {
+    var couponElement = document.getElementById("coupon");
 
+    var tempInput = document.createElement("input");
+    tempInput.value = couponElement.innerText;
+
+    document.body.appendChild(tempInput);
+
+    tempInput.select();
+
+    document.execCommand("copy");
+
+    document.body.removeChild(tempInput);
+
+    copyButton.innerHTML = `Đã Sao Chép`;
+}
 $(document).on('click', '.box', function () {
     if ($(this).data("test")) {
         score += 1;
@@ -188,6 +222,22 @@ function gameStart(){
 
 
 }
+
+$("#dataForm").submit(function(e) {
+    e.preventDefault();
+    var formData = {
+        score: score,
+        name: $('#name').val(),
+        phone: $('#phone').val()
+    };
+
+    var CodeWin = checkTime(score);
+    document.getElementById('success').innerHTML = `Bạn đã trúng: ${CodeWin.description}.`;
+    document.getElementById('coupon').innerHTML = `${CodeWin.code}.`;
+
+    $('#resultModal').modal('hide');
+    $('#modalSuccess').modal('show');
+});
 
 
 
