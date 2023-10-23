@@ -33,8 +33,8 @@ const Danger= [
 var stopDropBox = false;
 let timer;
 
-let seconds = 2;
-let minutes = 0;
+let seconds = 1;
+let minutes = 1;
 let scoreDone;
 let runGame;
 
