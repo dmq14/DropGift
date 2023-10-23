@@ -37,8 +37,8 @@ let seconds = 1;
 let minutes = 1;
 let scoreDone;
 let runGame;
-var soundW = new Audio('https://cdn.discordapp.com/attachments/991289858150649947/1165948312340398080/ding-sound-effect_1.mp3?ex=6548b4fb&is=65363ffb&hm=c97b3b5115ace98778897930d019cd8d668327ff26b6d301376f59371bfff420&');
-var soundL = new Audio('https://cdn.discordapp.com/attachments/991289858150649947/1165948312646594590/uh_pjRnSML_mp3cut.net.mp3?ex=6548b4fc&is=65363ffc&hm=f1b7c9da229cf8080a6b772e28d07e5a8da4e78de2583719860973a7635c45e8&');
+var soundW = new Audio('https://cdn.discordapp.com/attachments/991289858150649947/1165946374148329502/ding-sound-effect_1.mp3?ex=6548b32d&is=65363e2d&hm=feb0a1bbda2f49c9b1e48a208fa328fb7cb1060b266dcdaf98aad399fe9d3ab3&');
+var soundL = new Audio('https://cdn.discordapp.com/attachments/991289858150649947/1165946873203413092/uh_pjRnSML.mp3?ex=6548b3a4&is=65363ea4&hm=399ad9ab2b3d6154a58df109b9f3f70bd66bd04456459ae9aa3278a7685a639c&');
 var soundY = new Audio('https://cdn.discordapp.com/attachments/991289858150649947/1165950711452930149/ta-da_yrvBrlS.mp3?ex=6548b737&is=65364237&hm=4fbc1b14c453fe37a90fbdac452f621d2c3a96e44bc549c2353b834493f42b8e&');
 
 function soundYeah() {
