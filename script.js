@@ -82,7 +82,24 @@ function displayResultModal() {
 
     $('#resultModal').modal('show');
 }
-
+function checkTime() {
+    var CodeWin = {
+        code: '',
+        description: ''
+    };
+    console.log(scoreDone);
+    if (scoreDone >= 40) {
+        CodeWin.code = 'SALE-KL12';
+        CodeWin.description = 'Mã giảm giá 300K';
+    } else if (scoreDone < 40 && scoreDone >= 30) {
+        CodeWin.code = 'SALE-GH78';
+        CodeWin.description = 'Mã giảm giá 200K';
+    } else {
+        CodeWin.code = 'SALE-CD34';
+        CodeWin.description = 'Mã giảm giá 100K';
+    }
+    return CodeWin;
+}
 function refresh(){
     stopTimer();
     minutes=1;
@@ -170,24 +187,7 @@ function dropBox() {
     }
 
 }
-function checkTime(scoreDone) {
-    var CodeWin = {
-        code: '',
-        description: ''
-    };
-    console.log(scoreDone);
-    if (scoreDone >= 40) {
-        CodeWin.code = 'SALE-KL12';
-        CodeWin.description = 'Mã giảm giá 300K';
-    } else if (scoreDone < 40 && scoreDone >= 30) {
-        CodeWin.code = 'SALE-GH78';
-        CodeWin.description = 'Mã giảm giá 200K';
-    } else {
-        CodeWin.code = 'SALE-CD34';
-        CodeWin.description = 'Mã giảm giá 100K';
-    }
-    return CodeWin;
-}
+
 
 function copyCouponCode() {
     var couponElement = document.getElementById("coupon");
