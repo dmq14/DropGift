@@ -57,6 +57,7 @@ function startTimer() {
     if (!timer) {
         setTimeout(1000)
         timer = setInterval(updateTimer, 1000);
+        noti();
     }
 }
 
@@ -140,7 +141,17 @@ function setBG() {
         return Danger[1].img;
     }
 }
-
+function noti(){
+    notification.innerHTML = `         <div class=" mt-6">
+    <div class="alert alert-success" role="alert">
+      Thời gian bắt đầu
+    </div>
+  </div>`;
+    setTimeout(() => {
+        notification.style.opacity = 0;
+        notification.classList.add('hidden');
+    }, 3000);
+}
 function start() {
     var button = document.getElementById('myButton');
     if (button.innerHTML === 'Start') {
@@ -148,9 +159,11 @@ function start() {
         stopDropBox = false;
         button.classList.add('red-button');
         myAudio.play();
+        
         score = 0;
     $(".score").html(score);
     var counter = document.getElementById("counter");
+
         startTimer();
         runGame = setInterval(function () {
             for (i = 0; i < 2; i++) {
@@ -265,3 +278,4 @@ $("#myButton").on("click", function() {
 
     gameStart();
 });
+

@@ -84,6 +84,16 @@
     background-color: rgb(255, 0, 0) !important;
     color: white;
 }
+.notificationCT{
+
+  position: fixed;
+  top: 10px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 22;
+}
   .button a{
     color:white;
     font-family:Helvetica, sans-serif;
