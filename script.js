@@ -37,7 +37,15 @@ let seconds = 1;
 let minutes = 1;
 let scoreDone;
 let runGame;
+var soundW = new Audio('https://cdn.discordapp.com/attachments/991289858150649947/1165948312340398080/ding-sound-effect_1.mp3?ex=6548b4fb&is=65363ffb&hm=c97b3b5115ace98778897930d019cd8d668327ff26b6d301376f59371bfff420&');
+var soundL = new Audio('https://cdn.discordapp.com/attachments/991289858150649947/1165948312646594590/uh_pjRnSML_mp3cut.net.mp3?ex=6548b4fc&is=65363ffc&hm=f1b7c9da229cf8080a6b772e28d07e5a8da4e78de2583719860973a7635c45e8&');
 
+function soundWin() {
+    soundW.play();
+}
+function soundLose() {
+    soundL.play();
+}
 function startTimer() {
     
     if (!timer) {
@@ -132,6 +140,7 @@ function start() {
         button.innerHTML = 'Stop';
         stopDropBox = false;
         button.classList.add('red-button');
+        myAudio.play();
         score = 0;
     $(".score").html(score);
     var counter = document.getElementById("counter");
@@ -145,6 +154,7 @@ function start() {
         button.innerHTML = 'Start';
         stopDropBox = true;
         button.classList.remove('red-button');
+        myAudio.pause();
         refresh();
         clearInterval(runGame); // Dừng vòng lặp khi bấm dừng
     }
@@ -208,8 +218,10 @@ function copyCouponCode() {
 $(document).on('click', '.box', function () {
     if ($(this).data("test")) {
         score += 1;
+        soundWin();
     } else {
         score -= 1;
+        soundLose();
     }
 
     $(".score").html(score);
