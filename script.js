@@ -39,11 +39,17 @@ let scoreDone;
 let runGame;
 var soundW = new Audio('https://cdn.discordapp.com/attachments/991289858150649947/1165948312340398080/ding-sound-effect_1.mp3?ex=6548b4fb&is=65363ffb&hm=c97b3b5115ace98778897930d019cd8d668327ff26b6d301376f59371bfff420&');
 var soundL = new Audio('https://cdn.discordapp.com/attachments/991289858150649947/1165948312646594590/uh_pjRnSML_mp3cut.net.mp3?ex=6548b4fc&is=65363ffc&hm=f1b7c9da229cf8080a6b772e28d07e5a8da4e78de2583719860973a7635c45e8&');
+var soundY = new Audio('https://cdn.discordapp.com/attachments/991289858150649947/1165950711452930149/ta-da_yrvBrlS.mp3?ex=6548b737&is=65364237&hm=4fbc1b14c453fe37a90fbdac452f621d2c3a96e44bc549c2353b834493f42b8e&');
 
-function soundWin() {
+function soundYeah() {
+    soundY.currentTime = 0;
+    soundY.play();
+}function soundWin() {
+    soundW.currentTime = 0;
     soundW.play();
 }
 function soundLose() {
+    soundL.currentTime = 0;
     soundL.play();
 }
 function startTimer() {
@@ -80,6 +86,7 @@ function updateTimer() {
 }
 
 function displayResultModal() {
+    
     let modalTitle = document.getElementById('modalTitle');
     let modalContent = document.getElementById('modalContent');
     modalTitle.innerHTML = 'Kết quả';
@@ -236,6 +243,8 @@ function gameStart(){
 }
 
 $("#dataForm").submit(function(e) {
+    myAudio.pause();
+    soundYeah();
     e.preventDefault();
     var formData = {
         score: score,
@@ -246,7 +255,6 @@ $("#dataForm").submit(function(e) {
     var CodeWin = checkTime(score);
     document.getElementById('success').innerHTML = `Bạn đã trúng: ${CodeWin.description}.`;
     document.getElementById('coupon').innerHTML = `${CodeWin.code}.`;
-
     $('#resultModal').modal('hide');
     $('#modalSuccess').modal('show');
 });
