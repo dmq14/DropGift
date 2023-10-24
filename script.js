@@ -41,16 +41,41 @@ var soundW = new Audio('https://cdn.discordapp.com/attachments/99128985815064994
 var soundL = new Audio('https://cdn.discordapp.com/attachments/991289858150649947/1165946873203413092/uh_pjRnSML.mp3?ex=6548b3a4&is=65363ea4&hm=399ad9ab2b3d6154a58df109b9f3f70bd66bd04456459ae9aa3278a7685a639c&');
 var soundY = new Audio('https://cdn.discordapp.com/attachments/991289858150649947/1165950711452930149/ta-da_yrvBrlS.mp3?ex=6548b737&is=65364237&hm=4fbc1b14c453fe37a90fbdac452f621d2c3a96e44bc549c2353b834493f42b8e&');
 
+var isMuted = false;
+
 function soundYeah() {
-    soundY.currentTime = 0;
-    soundY.play();
-}function soundWin() {
-    soundW.currentTime = 0;
-    soundW.play();
+    if (!isMuted) {
+        soundY.currentTime = 0;
+        soundY.play();
+    }
 }
+
+function soundWin() {
+    if (!isMuted) {
+        soundW.currentTime = 0;
+        soundW.play();
+    }
+}
+
 function soundLose() {
-    soundL.currentTime = 0;
-    soundL.play();
+    if (!isMuted) {
+        soundL.currentTime = 0;
+        soundL.play();
+    }
+}
+
+function muteSounds() {
+    isMuted = true;
+    soundW.muted = true;
+    soundL.muted = true;
+    soundY.muted = true;
+}
+
+function unmuteSounds() {
+    isMuted = false;
+    soundW.muted = false;
+    soundL.muted = false;
+    soundY.muted = false;
 }
 function startTimer() {
     
@@ -144,7 +169,7 @@ function setBG() {
 function noti(){
     notification.innerHTML = `         <div class=" mt-6">
     <div class="alert alert-success" role="alert">
-      Thời gian bắt đầu
+      Thời gian bắt đầu!
     </div>
   </div>`;
     setTimeout(() => {
@@ -277,5 +302,36 @@ $("#dataForm").submit(function(e) {
 $("#myButton").on("click", function() {
 
     gameStart();
+});
+
+var isMuted = false;
+var audios = document.getElementsByTagName('audio');
+var videos = document.getElementsByTagName('video');
+
+var muteButton = document.getElementById('muteButton');
+muteButton.addEventListener('click', function() {
+    if (!isMuted) {
+        Array.from(audios).forEach(function(audio) {
+            audio.muted = true;
+        });
+        Array.from(videos).forEach(function(video) {
+            video.muted = true;
+        });
+        isMuted = true;
+        speakerIcon.classList.remove('fa-volume-up');
+        speakerIcon.classList.add('fa-volume-off');
+        // muteButton.innerHTML = 'Unmute Site';
+    } else {
+        Array.from(audios).forEach(function(audio) {
+            audio.muted = false;
+        });
+        Array.from(videos).forEach(function(video) {
+            video.muted = false;
+        });
+        isMuted = false;
+        speakerIcon.classList.remove('fa-volume-off');
+        speakerIcon.classList.add('fa-volume-up');
+        // muteButton.innerHTML = 'Mute Site';
+    }
 });
 

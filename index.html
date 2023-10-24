@@ -6,10 +6,13 @@
     <title>Gift Catching Game</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-   
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   </head>
   <body style="background-color: rgb(232, 232, 93);" class="bg">
+    <div id="muteButton" class="d-volume">
+      <i id="speakerIcon" class="fa fa-volume-up volume"></i>
+  </div>
     <div id="notification" class="notificationCT"> </div>
     <div class="container  p-3">
 
@@ -27,6 +30,9 @@
             </li>
             <li class="nav-item d-flex justify-content-center">
                <a class="nav-link menu-nav " href="#thele" >Thể lệ chương trình</a>
+            </li>
+            <li class="nav-item d-flex justify-content-center">
+               <a class="nav-link menu-nav " href="#huongdan" >Hướng dẫn chơi</a>
             </li>
             <li class="nav-item d-flex justify-content-center">
                <a class="nav-link menu-nav" href="#dstrungthuong" >Danh sách trúng thưởng</a>
@@ -64,7 +70,7 @@
          <div class ="col-md-3 ">
           <!-- <H2 class="d-flex justify-content-center mt-2">Hướng dẫn chơi </H2> -->
           <div>
-            <img class="rules" src="https://cdn.discordapp.com/attachments/991289858150649947/1165847357628366878/11.png?ex=654856f6&is=6535e1f6&hm=c83d646d463d011f46df285bf39bffdba958eaff96cb6242174c784573439a12&" alt="">
+            <img class="rules" src="https://cdn.discordapp.com/attachments/991289858150649947/1166198448178069534/11.png?ex=65499df0&is=653728f0&hm=c25215bc4cafbb945d62193daae5748becd17631e927c147d6a5108bebe5adc1&" alt="">
           </div>
           <div style="background-color: rgb(255, 255, 255);">
           <div >
@@ -143,7 +149,7 @@
     
     <div class="container mb-5 border-top border-dark" >
       <div class="row d-flex justify-content-center mt-5" >
-        <div class="col-md-4 thele "style="height:640px; background-color:rgba(255, 255, 255, 0.7)" id="thele">
+        <div class="col-md-4 thele "style="height:640px; background-color:rgba(255, 255, 255, 0.8)" id="thele">
           <h2 class="p-2" style="color: #FF914D;">Thể lệ chương trình</h2>
           <div class="scroll">
 
@@ -275,8 +281,56 @@
         </div>
       </div>
     </div>
-    <div class="container mb-5" style="height: 500px; margin-top: 3em; background-color:rgba(255, 255, 255, 0.7)">
-      BÌNH LUẬN
+
+    <div class="container border mb-5" style="height: 660px; margin-top: 3em; background-color:rgba(255, 255, 255, 0.8)">
+      <h2  id="huongdan" class="p-2" style="color: #FF914D;">Hướng dẫn chơi game</h2>
+          <div class="scroll">
+
+          <p>
+            Mini game:</br>
+
+              + Thời gian trò chơi: 1 phút 30 s</br>
+              + Thời gian trò chơi: 1 phút 30 s</br>
+              + Thời gian trò chơi: 1 phút 30 s</br>
+
+              + Người chơi game hứng vật dụng rơi bao gồm </br>
+                  Mấy cái này thì +1 điểm</br>
+                  Mấy cái kia thì -1 điểm</br>
+
+              Dựa vào mức điểm: → giá giảm</br>
+
+              + Dưới 100 điểm : 100K</br>
+
+              + Từ 100 đến 300 điểm: 200KM</dbr>
+
+              + Trên 300 điểm: giảm 300K</br>
+              + Trên 300 điểm: giảm 300K</br>
+              + Trên 300 điểm: giảm 300K</br>
+
+              Mini game:</br>
+
+              + Thời gian trò chơi: 1 phút 30 s</br>
+              + Thời gian trò chơi: 1 phút 30 s</br>
+
+              + Người chơi game hứng vật dụng rơi bao gồm </br>
+                  Mấy cái này thì +1 điểm</br>
+                  Mấy cái kia thì -1 điểm</br>
+
+              Dựa vào mức điểm: → giá giảm</br>
+
+              + Dưới 100 điểm : 100K</br>
+
+              + Từ 100 đến 300 điểm: 200K</br>
+
+              + Trên 300 điểm: giảm 300K</br>
+              + Trên 300 điểm: giảm 300K</br>
+              + Trên 300 điểm: giảm 300K</br>
+          </p>
+    </div>
+  </div>
+
+    <div class="container mb-5 border" style="height: 500px; margin-top: 3em; background-color:rgba(255, 255, 255, 0.8)">
+      <h2   class="p-2" style="color: #FF914D;">Bình luận</h2>
     </div>
 
     <script src="script.js"></script>
