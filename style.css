@@ -11,6 +11,19 @@
   cursor: pointer;
   z-index: 1000;
 }
+#bgvid {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 .navCustom{
    
   border-radius: 11px;
@@ -49,7 +62,8 @@
 
   }
 .bg{
-  background-image: url("https://cdn.discordapp.com/attachments/991289858150649947/1166201556639686746/9.png?ex=6549a0d6&is=65372bd6&hm=34e3afdf7b36c9f139c036184fc102a5d01a14ea1195d36c0dde29531d7e1e16&");
+
+  /* background-image: url("https://cdn.discordapp.com/attachments/991289858150649947/1166201556639686746/9.png?ex=6549a0d6&is=65372bd6&hm=34e3afdf7b36c9f139c036184fc102a5d01a14ea1195d36c0dde29531d7e1e16&"); */
   background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
