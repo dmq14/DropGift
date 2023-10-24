@@ -40,6 +40,7 @@ let runGame;
 var soundW = new Audio('https://cdn.discordapp.com/attachments/991289858150649947/1165946374148329502/ding-sound-effect_1.mp3?ex=6548b32d&is=65363e2d&hm=feb0a1bbda2f49c9b1e48a208fa328fb7cb1060b266dcdaf98aad399fe9d3ab3&');
 var soundL = new Audio('https://cdn.discordapp.com/attachments/991289858150649947/1165946873203413092/uh_pjRnSML.mp3?ex=6548b3a4&is=65363ea4&hm=399ad9ab2b3d6154a58df109b9f3f70bd66bd04456459ae9aa3278a7685a639c&');
 var soundY = new Audio('https://cdn.discordapp.com/attachments/991289858150649947/1165950711452930149/ta-da_yrvBrlS.mp3?ex=6548b737&is=65364237&hm=4fbc1b14c453fe37a90fbdac452f621d2c3a96e44bc549c2353b834493f42b8e&');
+var soundT = new Audio('https://cdn.discordapp.com/attachments/991289858150649947/1166240044806320228/fairy-dust-sound-effect.mp3?ex=6549c4ae&is=65374fae&hm=7d40fee555787b21844bcc588b74a1a965a4d6f9cd9589d25edebe0818a6c1bc&');
 
 var isMuted = false;
 
@@ -49,7 +50,12 @@ function soundYeah() {
         soundY.play();
     }
 }
-
+function soundTing() {
+    if (!isMuted) {
+        soundT.currentTime = 0;
+        soundT.play();
+    }
+}
 function soundWin() {
     if (!isMuted) {
         soundW.currentTime = 0;
@@ -112,7 +118,7 @@ function updateTimer() {
 }
 
 function displayResultModal() {
-    
+    soundTing();
     let modalTitle = document.getElementById('modalTitle');
     let modalContent = document.getElementById('modalContent');
     modalTitle.innerHTML = 'Kết quả';
