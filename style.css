@@ -19,10 +19,8 @@
   min-height: 100%;
   width: auto;
   height: auto;
-  z-index: -1;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  z-index: -100;
+
 }
 .navCustom{
    
