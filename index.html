@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   </head>
   <body style="background-color: rgb(232, 232, 93);" class="bg">
-    <div id="muteButton" class="d-volume">
+  <div id="muteButton" class="d-volume">
       <i id="speakerIcon" class="fa fa-volume-up volume"></i>
   </div>
-    <div id="notification" class="notificationCT"> </div>
-    <div class="container  p-3">
+  <div id="notification" class="notificationCT"> </div>
+  <div class="container  p-3">
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="background-color: rgb(160, 24, 24) !important; border-radius: 11px;">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark navCustom" style="background-color: rgb(160, 24, 24) !important;">
       <!-- Toggler/collapsibe Button -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
          <span class="navbar-toggler-icon"></span>
@@ -119,19 +119,14 @@
 
 <div class="modal" id="modalSuccess">
   <div class="modal-dialog">
-    <!-- <img class="dstt"  src="https://cdn.discordapp.com/attachments/991289858150649947/1165911785589714955/14.png?ex=654892f7&is=65361df7&hm=e97ed9f67eef01a7df8c412c900f562641981cfe92cf272ae45e2cd401f76e89&" alt=""> -->
       <div class="modal-content" style="background-image:url(https://cdn.discordapp.com/attachments/991289858150649947/1165913378963857428/14.png?ex=65489473&is=65361f73&hm=bf3ba598c5ec0ecf63ce89a3ab404668b3d2cbdef37c69064cdc1bdac3083e36&); background-color: cornsilk;">
-          <!-- Modal Header -->
           <div class="modal-header">
               <h4 class="modal-title" id="modalTitle">Chúc mừng bạn!</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
-          <!-- Modal body -->
           <div class="modal-body" id="modalContent">
-              <!-- Content will be filled dynamically -->
           </div>
           <div class="container ">
-            <!-- <h4 class="modal-title text-center " style="font-weight: bolder;">Cảm ơn bạn đã tham gia chương trình</h4> -->
             <h4 class="modal-title text-center" id="success"></h4>
             <h4 class="modal-title text-center" id="coupon" style="font-weight: bold; color: brown;"></h4>
             <div class="d-flex justify-content-center">
@@ -141,60 +136,27 @@
       </div>
     </div>
   </div>
-</div>
 
-
-  
- 
     
     <div class="container mb-5 border-top border-dark" >
       <div class="row d-flex justify-content-center mt-5" >
-        <div class="col-md-4 thele "style="height:640px; background-color:rgba(255, 255, 255, 0.8)" id="thele">
+        <div class="col-md-4 thele " id="thele">
           <h2 class="p-2" style="color: #FF914D;">Thể lệ chương trình</h2>
           <div class="scroll">
+            <p style="font-size: 25px;">
+                Thời gian trò chơi: 1 phút</br>
+                Người chơi game bắt các món quà bao gồm: </br>
+                    + Bánh chưng, bao lì xì, hộp quà: +1 điểm</br>
+                    + Icon buồn bã và icon tức giận: -1 điểm</br>
+                Dựa vào mức điểm: → giảm giá:</br>
 
-          <p>
-            Mini game:</br>
+                + Trên 45 điểm : Giảm 300k</br>
 
-              + Thời gian trò chơi: 1 phút 30 s</br>
-              + Thời gian trò chơi: 1 phút 30 s</br>
-              + Thời gian trò chơi: 1 phút 30 s</br>
+                + Từ 30 đến 45 điểm: Giảm 200K</br>
 
-              + Người chơi game hứng vật dụng rơi bao gồm </br>
-                  Mấy cái này thì +1 điểm</br>
-                  Mấy cái kia thì -1 điểm</br>
-
-              Dựa vào mức điểm: → giá giảm</br>
-
-              + Dưới 100 điểm : 100K</br>
-
-              + Từ 100 đến 300 điểm: 200KM</dbr>
-
-              + Trên 300 điểm: giảm 300K</br>
-              + Trên 300 điểm: giảm 300K</br>
-              + Trên 300 điểm: giảm 300K</br>
-
-              Mini game:</br>
-
-              + Thời gian trò chơi: 1 phút 30 s</br>
-              + Thời gian trò chơi: 1 phút 30 s</br>
-
-              + Người chơi game hứng vật dụng rơi bao gồm </br>
-                  Mấy cái này thì +1 điểm</br>
-                  Mấy cái kia thì -1 điểm</br>
-
-              Dựa vào mức điểm: → giá giảm</br>
-
-              + Dưới 100 điểm : 100K</br>
-
-              + Từ 100 đến 300 điểm: 200K</br>
-
-              + Trên 300 điểm: giảm 300K</br>
-              + Trên 300 điểm: giảm 300K</br>
-              + Trên 300 điểm: giảm 300K</br>
-          </p>
-        </div>
-
+                + Dưới 30 điểm: Giảm 100K</br>
+            </p>
+          </div>
         </div>
         <div class=" col-md-4 trungthuong "style="height:640px; background-color:rgba(255, 255, 255, 0.7)" >
           <img id="dstrungthuong" class="dstt"  src="https://cdn.discordapp.com/attachments/991289858150649947/1164836871881359380/bannerTrungthuong.png?ex=6544a9df&is=653234df&hm=9d86f720b5ca2110d0372fb3b06a25526ad98345a1f64496f0578988641f9574&" alt="">
@@ -279,57 +241,39 @@
           </table>
         </div>
         </div>
-      </div>
+        </div>
     </div>
+  </div> 
 
-    <div class="container border mb-5" style="height: 660px; margin-top: 3em; background-color:rgba(255, 255, 255, 0.8)">
+    <div class="container border mb-5 hd">
       <h2  id="huongdan" class="p-2" style="color: #FF914D;">Hướng dẫn chơi game</h2>
-          <div class="scroll">
+          <div class="scroll container  ">
 
           <p>
-            Mini game:</br>
+            Chào mừng bạn đến với trò chơi DropGift cùng Khóa Vàng!</br> Trong mùa Tết này, chúng tôi mang đến cho bạn một trải nghiệm đầy thú vị và phấn khích.</br>
 
-              + Thời gian trò chơi: 1 phút 30 s</br>
-              + Thời gian trò chơi: 1 phút 30 s</br>
-              + Thời gian trò chơi: 1 phút 30 s</br>
-
-              + Người chơi game hứng vật dụng rơi bao gồm </br>
-                  Mấy cái này thì +1 điểm</br>
-                  Mấy cái kia thì -1 điểm</br>
-
-              Dựa vào mức điểm: → giá giảm</br>
-
-              + Dưới 100 điểm : 100K</br>
-
-              + Từ 100 đến 300 điểm: 200KM</dbr>
-
-              + Trên 300 điểm: giảm 300K</br>
-              + Trên 300 điểm: giảm 300K</br>
-              + Trên 300 điểm: giảm 300K</br>
-
-              Mini game:</br>
-
-              + Thời gian trò chơi: 1 phút 30 s</br>
-              + Thời gian trò chơi: 1 phút 30 s</br>
-
-              + Người chơi game hứng vật dụng rơi bao gồm </br>
-                  Mấy cái này thì +1 điểm</br>
-                  Mấy cái kia thì -1 điểm</br>
-
-              Dựa vào mức điểm: → giá giảm</br>
-
-              + Dưới 100 điểm : 100K</br>
-
-              + Từ 100 đến 300 điểm: 200K</br>
-
-              + Trên 300 điểm: giảm 300K</br>
-              + Trên 300 điểm: giảm 300K</br>
-              + Trên 300 điểm: giảm 300K</br>
+            Bạn có thời gian là 1 phút. Nhiệm vụ của bạn là click vào các hình ảnh đặc trưng của mùa tết như bánh chưng truyền thống, bao lì xì may mắn và hộp quà may mắn. Mỗi lần bạn click vào, bạn sẽ được cộng 1 điểm.</br>
+            
+            
+            <img class="w-100" src="https://cdn.discordapp.com/attachments/991289858150649947/1166215438523449344/congdiem.png?ex=6549adc3&is=653738c3&hm=3bd8ce26dab534cd9d13fee6b5cd5ae7616c43d81d6c9d6e4c908bbbb6dd5638&" alt="congdiem"></br>
+            
+            
+            Hãy cẩn thận với các icon tức giận và icon khóc, bởi vì nếu bạn click vào chúng, điểm số của bạn sẽ giảm đi một đơn vị.  </br>
+            <img class="w-100" src="https://cdn.discordapp.com/attachments/991289858150649947/1166215438007554079/trudiem.png?ex=6549adc3&is=653738c3&hm=cce92616ccbadde4bf915820dcdc99f1edd6137bdd75a1f4a425cdaa0b79ab21&" alt="trudiem"></br>
+            Tuy nhiên, không cần lo lắng quá nhiều, vì mỗi hành động tích cực sẽ được đánh giá cao hơn trong không khí đoàn viên của mùa Tết.</br>
+            Mỗi hành động tích cực sẽ giúp bạn nhận thêm một điểm, trong khi mỗi hành động tiêu cực sẽ trừ điểm của bạn.</br>
+            
+            Nếu bạn chơi thật tốt và đạt được điểm cao, bạn sẽ có cơ hội nhận các phần thưởng hấp dẫn. Cụ thể:</br>
+            
+            +Đạt 45 điểm trở lên: Bạn sẽ nhận được một mã giảm giá trị 300K.</br>
+            +Đạt từ 25 đến dưới 45 điểm: Bạn sẽ được thưởng mã giảm giá trị 200K.</br>
+            +Đạt điểm dưới 25: Bạn sẽ nhận được mã giảm giá trị 100K.</br>
+            Hãy tham gia và tận hưởng không khí Tết đặc biệt cùng DropGift và Khóa Vàng!
           </p>
-    </div>
+          </div>
   </div>
 
-    <div class="container mb-5 border" style="height: 500px; margin-top: 3em; background-color:rgba(255, 255, 255, 0.8)">
+    <div class="container mb-5 border hd" >
       <h2   class="p-2" style="color: #FF914D;">Bình luận</h2>
     </div>
 

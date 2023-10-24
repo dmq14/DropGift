@@ -129,10 +129,10 @@ function checkTime() {
         description: ''
     };
     console.log(scoreDone);
-    if (scoreDone >= 40) {
+    if (scoreDone >= 45) {
         CodeWin.code = 'SALE-KL12';
         CodeWin.description = 'Mã giảm giá 300K';
-    } else if (scoreDone < 40 && scoreDone >= 30) {
+    } else if (scoreDone < 45 && scoreDone >= 30) {
         CodeWin.code = 'SALE-GH78';
         CodeWin.description = 'Mã giảm giá 200K';
     } else {

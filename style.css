@@ -11,6 +11,10 @@
   cursor: pointer;
   z-index: 1000;
 }
+.navCustom{
+   
+  border-radius: 11px;
+}
 
 .fa {
   font-size: 24px;
@@ -216,6 +220,13 @@
   .thele{
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+    height:640px; 
+    background-color:rgba(255, 255, 255, 0.8)
+  }
+  .hd{
+    height: 660px; 
+    margin-top: 3em; 
+    background-color:rgba(255, 255, 255, 0.8)
   }
   .trungthuong{
     border-top-right-radius: 20px;
