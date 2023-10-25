@@ -33,7 +33,7 @@ const Danger= [
 var stopDropBox = false;
 let timer;
 
-let seconds = 1;
+let seconds = 31;
 let minutes = 1;
 let scoreDone;
 let runGame;
@@ -96,6 +96,7 @@ function stopTimer() {
     if (timer) {
         clearInterval(timer);
         timer = null;
+        myButton.classList.remove('red-button');
     }
 }
 
@@ -134,23 +135,42 @@ function checkTime() {
         code: '',
         description: ''
     };
-    console.log(scoreDone);
-    if (scoreDone >= 45) {
-        CodeWin.code = 'SALE-KL12';
-        CodeWin.description = 'Mã giảm giá 300K';
-    } else if (scoreDone < 45 && scoreDone >= 30) {
-        CodeWin.code = 'SALE-GH78';
-        CodeWin.description = 'Mã giảm giá 200K';
+    
+    if (scoreDone < 20) {
+        CodeWin.code = 'SALE-Q100';
+        CodeWin.description = 'Mã giảm giá trị 100K';
+    } else if (scoreDone >= 20 && scoreDone < 30) {
+        CodeWin.code = 'SALE-E200';
+        CodeWin.description = 'Mã giảm giá trị 200K';
+    } else if (scoreDone >= 30 && scoreDone < 40) {
+        CodeWin.code = 'SALE-T300';
+        CodeWin.description = 'Mã giảm giá trị 300K';
+    } else if (scoreDone >= 40 && scoreDone < 50) {
+        CodeWin.code = 'SALE-Y500';
+        CodeWin.description = 'Mã giảm giá trị 500K';
+    } else if (scoreDone >= 60 && scoreDone < 70) {
+        CodeWin.code = 'SALE-P600';
+        CodeWin.description = 'Mã giảm giá trị 600K';
+    } else if (scoreDone >= 70 && scoreDone < 80) {
+        CodeWin.code = 'SALE-M800';
+        CodeWin.description = 'Mã giảm giá trị 800K';
+    } else if (scoreDone >= 80 && scoreDone < 90) {
+        CodeWin.code = 'SALE-B900';
+        CodeWin.description = 'Mã giảm giá trị 900K';
+    } else if (scoreDone >= 100) {
+        CodeWin.code = 'SALE-M1M';
+        CodeWin.description = 'Mã giảm giá trị 1 triệu đồng';
     } else {
         CodeWin.code = 'SALE-CD34';
-        CodeWin.description = 'Mã giảm giá 100K';
+        CodeWin.description = 'Mã giảm giá trị 100K';
     }
     return CodeWin;
 }
+
 function refresh(){
     stopTimer();
     minutes=1;
-    seconds=1;
+    seconds=31;
     updateTimer();
     score = 0;
     $(".score").html(score);
@@ -207,47 +227,44 @@ function start() {
         button.classList.remove('red-button');
         myAudio.pause();
         refresh();
-        clearInterval(runGame); // Dừng vòng lặp khi bấm dừng
+        clearInterval(runGame); 
     }
 }
 
 function dropBox() {
     if (!stopDropBox) {
-    var length = random(8, ($(".game").width() - 100));
-    var velocity = random(850, 8000);
-    var size = random(40, 100);
-    var thisBox = $("<div/>", {
-        class: "box",
-        style: "width:" + size + "px; height:" + size + "px; left:" + length + "px; transition: transform " + velocity + "ms linear;"
-    });
-
-    //set data and bg based on data
-    thisBox.data("test", Math.round(Math.random()));
-    var randomGiftIndex = random(0, Gift.length - 1);
-    var randomDangerIndex = random(0, Danger.length - 1);
-    if (thisBox.data("test")) {
-        thisBox.css({ "background": "url('" + Gift[randomGiftIndex].img + "')", "background-size": "contain" });
-    } else {
-        thisBox.css({ "background": "url('" + Danger[randomDangerIndex].img + "')", "background-size": "contain" });
-    }
-
-    //insert gift element
-     $(".game").append(thisBox);
-
-
-    //random start for animation
-    setTimeout(function () {
-        thisBox.addClass("move");
-    }, random(0, 5000));
-
-    //remove this object when animation is over
-    thisBox.one("webkitTransitionEnd ontransitionend oTransitionEnd msTransitionEnd transitionend",
-        function (event) {
-            $(this).remove();
+        var length = random(7, ($(".game").width() - 100));
+        var velocity = random(800, 8000);
+        var size = random(40, 100);
+        var thisBox = $("<div/>", {
+            class: "box",
+            style: "width:" + size + "px; height:" + size + "px; left:" + length + "px; transition: transform " + velocity + "ms linear;"
         });
-    }
 
+        var randomType = random(0, 9);
+        if (randomType < 5) {
+            var randomGiftIndex = random(0, Gift.length - 1);
+            thisBox.css({ "background": "url('" + Gift[randomGiftIndex].img + "')", "background-size": "contain" });
+        } else {
+            var randomDangerIndex = random(0, Danger.length - 1);
+            thisBox.css({ "background": "url('" + Danger[randomDangerIndex].img + "')", "background-size": "contain" });
+        }
+
+        thisBox.data("test", Math.round(Math.random()));
+        
+        $(".game").append(thisBox);
+
+        setTimeout(function () {
+            thisBox.addClass("move");
+        }, random(0, 5000));
+
+        thisBox.one("webkitTransitionEnd ontransitionend oTransitionEnd msTransitionEnd transitionend",
+            function (event) {
+                $(this).remove();
+            });
+    }
 }
+
 
 
 function copyCouponCode() {
@@ -297,8 +314,8 @@ $("#dataForm").submit(function(e) {
     };
 
     var CodeWin = checkTime(score);
-    document.getElementById('success').innerHTML = `Bạn đã trúng: ${CodeWin.description}.`;
-    document.getElementById('coupon').innerHTML = `${CodeWin.code}.`;
+    document.getElementById('success').innerHTML = `${CodeWin.description}.`;
+    document.getElementById('coupon').innerHTML = `${CodeWin.code}`;
     $('#resultModal').modal('hide');
     $('#modalSuccess').modal('show');
 });
@@ -308,6 +325,10 @@ $("#dataForm").submit(function(e) {
 $("#myButton").on("click", function() {
 
     gameStart();
+});
+$("#choilai").on("click", function() {
+    $('#resultModal').modal('hide');
+    refresh();
 });
 
 var isMuted = false;
@@ -341,3 +362,20 @@ muteButton.addEventListener('click', function() {
     }
 });
 
+
+
+function treasureHunt() {
+  var img = document.getElementById("close");
+  var lock = document.getElementById("lock");
+  var hiddenContainer = document.getElementById("hiddenContainer");
+
+  img.classList.add("rotate");
+  lock.innerHTML = "The Treasure Is Opening";
+
+  setTimeout(function() {
+    img.style.display = "none";
+    lock.innerHTML = "The Treasure Is Open";
+    hiddenContainer.style.display = "block";
+    showConfetti();
+  }, 3000); // 3 seconds for the animation before showing the coupon
+}
