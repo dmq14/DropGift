@@ -233,36 +233,36 @@ function start() {
 
 function dropBox() {
     if (!stopDropBox) {
-        var length = random(7, ($(".game").width() - 100));
-        var velocity = random(800, 8000);
-        var size = random(40, 100);
-        var thisBox = $("<div/>", {
-            class: "box",
-            style: "width:" + size + "px; height:" + size + "px; left:" + length + "px; transition: transform " + velocity + "ms linear;"
-        });
+    var length = random(9, ($(".game").width() - 100));
+    var velocity = random(800, 6500);
+    var size = random(35, 90);
+    var thisBox = $("<div/>", {
+        class: "box",
+        style: "width:" + size + "px; height:" + size + "px; left:" + length + "px; transition: transform " + velocity + "ms linear;"
+    });
 
-        var randomType = random(0, 9);
-        if (randomType < 5) {
-            var randomGiftIndex = random(0, Gift.length - 1);
-            thisBox.css({ "background": "url('" + Gift[randomGiftIndex].img + "')", "background-size": "contain" });
-        } else {
-            var randomDangerIndex = random(0, Danger.length - 1);
-            thisBox.css({ "background": "url('" + Danger[randomDangerIndex].img + "')", "background-size": "contain" });
-        }
-
-        thisBox.data("test", Math.round(Math.random()));
-        
-        $(".game").append(thisBox);
-
-        setTimeout(function () {
-            thisBox.addClass("move");
-        }, random(0, 5000));
-
-        thisBox.one("webkitTransitionEnd ontransitionend oTransitionEnd msTransitionEnd transitionend",
-            function (event) {
-                $(this).remove();
-            });
+    thisBox.data("test", Math.round(Math.random()));
+    var randomGiftIndex = random(0, Gift.length - 1);
+    var randomDangerIndex = random(0, Danger.length - 1);
+    if (thisBox.data("test")) {
+        thisBox.css({ "background": "url('" + Gift[randomGiftIndex].img + "')", "background-size": "contain" });
+    } else {
+        thisBox.css({ "background": "url('" + Danger[randomDangerIndex].img + "')", "background-size": "contain" });
     }
+
+     $(".game").append(thisBox);
+
+
+    setTimeout(function () {
+        thisBox.addClass("move");
+    }, random(0, 5000));
+
+    thisBox.one("webkitTransitionEnd ontransitionend oTransitionEnd msTransitionEnd transitionend",
+        function (event) {
+            $(this).remove();
+        });
+    }
+
 }
 
 
