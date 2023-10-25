@@ -138,31 +138,31 @@ function checkTime() {
     
     if (scoreDone < 20) {
         CodeWin.code = 'SALE-Q100';
-        CodeWin.description = 'Mã giảm giá trị 100K';
+        CodeWin.description = 'Coupon giá trị 100K';
     } else if (scoreDone >= 20 && scoreDone < 30) {
         CodeWin.code = 'SALE-E200';
-        CodeWin.description = 'Mã giảm giá trị 200K';
+        CodeWin.description = 'Coupon giá trị 200K';
     } else if (scoreDone >= 30 && scoreDone < 40) {
         CodeWin.code = 'SALE-T300';
-        CodeWin.description = 'Mã giảm giá trị 300K';
+        CodeWin.description = 'Coupon giá trị 300K';
     } else if (scoreDone >= 40 && scoreDone < 50) {
         CodeWin.code = 'SALE-Y500';
-        CodeWin.description = 'Mã giảm giá trị 500K';
+        CodeWin.description = 'Coupon giá trị 500K';
     } else if (scoreDone >= 60 && scoreDone < 70) {
         CodeWin.code = 'SALE-P600';
-        CodeWin.description = 'Mã giảm giá trị 600K';
+        CodeWin.description = 'Coupon giá trị 600K';
     } else if (scoreDone >= 70 && scoreDone < 80) {
         CodeWin.code = 'SALE-M800';
-        CodeWin.description = 'Mã giảm giá trị 800K';
+        CodeWin.description = 'Coupon giá trị 800K';
     } else if (scoreDone >= 80 && scoreDone < 90) {
         CodeWin.code = 'SALE-B900';
-        CodeWin.description = 'Mã giảm giá trị 900K';
+        CodeWin.description = 'Coupon giá trị 900K';
     } else if (scoreDone >= 100) {
         CodeWin.code = 'SALE-M1M';
-        CodeWin.description = 'Mã giảm giá trị 1 triệu đồng';
+        CodeWin.description = 'Coupon giá trị 1 triệu đồng';
     } else {
         CodeWin.code = 'SALE-CD34';
-        CodeWin.description = 'Mã giảm giá trị 100K';
+        CodeWin.description = 'Coupon giá trị 100K';
     }
     return CodeWin;
 }
