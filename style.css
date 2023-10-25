@@ -306,6 +306,9 @@
   }
   
   @media only screen and (max-width: 760px) {
+    .thele{
+      height: 350px;
+    }
     .game{
       margin-bottom: 50px !important;
     }
