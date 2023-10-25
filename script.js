@@ -233,9 +233,9 @@ function start() {
 
 function dropBox() {
     if (!stopDropBox) {
-    var length = random(9, ($(".game").width() - 100));
-    var velocity = random(800, 8000);
-    var size = random(35, 90);
+    var length = random(1, ($(".game").width() - 100));
+    var velocity = random(1100, 8000);
+    var size = random(50, 90);
     var thisBox = $("<div/>", {
         class: "box",
         style: "width:" + size + "px; height:" + size + "px; left:" + length + "px; transition: transform " + velocity + "ms linear;"
