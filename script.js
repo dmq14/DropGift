@@ -281,7 +281,8 @@ function copyCouponCode() {
 
     document.body.removeChild(tempInput);
 
-    copyButton.innerHTML = `Đã Sao Chép`;
+    var copyButton = document.getElementById("copyButton");
+    copyButton.innerHTML = `Đã Sao Chép <i class="fas fa-check" style="font-size: 20px;"></i>`;
 }
 $(document).on('click', '.box', function () {
     if ($(this).data("test")) {
@@ -363,19 +364,3 @@ muteButton.addEventListener('click', function() {
 });
 
 
-
-function treasureHunt() {
-  var img = document.getElementById("close");
-  var lock = document.getElementById("lock");
-  var hiddenContainer = document.getElementById("hiddenContainer");
-
-  img.classList.add("rotate");
-  lock.innerHTML = "The Treasure Is Opening";
-
-  setTimeout(function() {
-    img.style.display = "none";
-    lock.innerHTML = "The Treasure Is Open";
-    hiddenContainer.style.display = "block";
-    showConfetti();
-  }, 3000); // 3 seconds for the animation before showing the coupon
-}
