@@ -8,33 +8,33 @@ function random(min, max) {
 const Gift = [
     {
         id: 1,
-        img: 'https://media.discordapp.net/attachments/991289858150649947/1164769217875279912/banhchung.png?ex=65446add&is=6531f5dd&hm=679127460ed15692d1fb44bf2b330edd273a888e8ceae7b943a0880edd0d72b8&=&width=625&height=625',
+        img: 'https://dev.khoavang.vn/resources/uploads/Hung-bao-li-xi/banhchung-1698287834.png',
     },
     {
         id: 2,
-        img: 'https://media.discordapp.net/attachments/991289858150649947/1164769218290524270/baolixi.png?ex=65446ade&is=6531f5de&hm=d66efd3691d270d8647daa0acc86b2b02da0b4894a566a4768c4a6c36706d941&=&width=625&height=625'
+        img: 'https://dev.khoavang.vn/resources/uploads/Hung-bao-li-xi/baolixi-1698287834.png'
     },
     {
         id: 3,
-        img: 'https://media.discordapp.net/attachments/991289858150649947/1164769218571554918/hopqua.png?ex=65446ade&is=6531f5de&hm=f71befd569c7b6284df2d25692bec5caad78c911ff936d2f28d344fd04b015ae&=&width=625&height=625'
+        img: 'https://dev.khoavang.vn/resources/uploads/Hung-bao-li-xi/hopqua-1698287834.png'
     }
 ];
 
 const Danger= [
     {
         id: 1,
-        img: 'https://cdn.discordapp.com/attachments/991289858150649947/1164769218911273100/icongian.png?ex=65446ade&is=6531f5de&hm=2a23c4c1d38bba857a600541e897c0047045a072d092d6eead3b911f2996fb51&',
+        img: 'https://dev.khoavang.vn/resources/uploads/Hung-bao-li-xi/icongian-1698287834.png',
     },
     {
         id: 2,
-        img: 'https://cdn.discordapp.com/attachments/991289858150649947/1164769219196493844/iconkhoc.png?ex=65446ade&is=6531f5de&hm=4357b81176d8f2bbb4c8f9a753705b8aba84d98bf2c0ee9b55155c036b299474&'
+        img: 'https://dev.khoavang.vn/resources/uploads/Hung-bao-li-xi/iconkhoc-1698287834.png'
     }
 ];
 var stopDropBox = false;
 let timer;
 
-let seconds = 31;
-let minutes = 1;
+let seconds = 3;
+let minutes = 0;
 let scoreDone;
 let runGame;
 var soundW = new Audio('https://cdn.discordapp.com/attachments/991289858150649947/1165946374148329502/ding-sound-effect_1.mp3?ex=6548b32d&is=65363e2d&hm=feb0a1bbda2f49c9b1e48a208fa328fb7cb1060b266dcdaf98aad399fe9d3ab3&');
