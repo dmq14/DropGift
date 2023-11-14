@@ -33,8 +33,8 @@ const Danger= [
 var stopDropBox = false;
 let timer;
 
-let seconds = 3;
-let minutes = 0;
+let seconds = 31;
+let minutes = 1;
 let scoreDone;
 let runGame;
 var soundW = new Audio('https://cdn.discordapp.com/attachments/991289858150649947/1165946374148329502/ding-sound-effect_1.mp3?ex=6548b32d&is=65363e2d&hm=feb0a1bbda2f49c9b1e48a208fa328fb7cb1060b266dcdaf98aad399fe9d3ab3&');
