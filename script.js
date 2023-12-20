@@ -33,7 +33,7 @@ const Danger= [
 var stopDropBox = false;
 let timer;
 
-let seconds = 31;
+let seconds = 1;
 let minutes = 1;
 let scoreDone;
 let runGame;
@@ -170,7 +170,7 @@ function checkTime() {
 function refresh(){
     stopTimer();
     minutes=1;
-    seconds=31;
+    seconds=1;
     updateTimer();
     score = 0;
     $(".score").html(score);
